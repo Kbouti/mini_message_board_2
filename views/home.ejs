@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mini Message Board</title>
-    <link rel="stylesheet" href="../style.css"/>
-</head>
-<body>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
     <H1>Home page</H1>
     <%-include('components/navbar') %>
     <h2><%= subtitle %></h2>
-    <% messages.map((message) => {   %>
-        <div class="message">
-            <p><%=message.text%></p>
-            <p><%=message.user%></p>
-            <p><%=message.added%></p>
-        </div>
-<%    }) %>
-</body>
+    <section>
+      <% messages.map((message) => { %>
+      <div class="message">
+        <p><%=message.text%></p>
+        <p><%=message.user%></p>
+        <p><%=message.added%></p>
+      </div>
+      <% }) %>
+    </section>
+  </body>
 </html>

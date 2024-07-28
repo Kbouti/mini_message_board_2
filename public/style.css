@@ -22,16 +22,14 @@ nav {
   height: 2rem;
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  justify-content: flex-start;
 }
 nav a {
   color: rgb(1, 64, 182);
   text-decoration: none;
-  border-radius: 10%;
-
-  background-color: rgb(87, 146, 255);
-
-
+  border-radius: 10px;
+  margin: auto 1rem auto;
+  padding: 0.3rem 0.3rem;
 }
 
 nav a:hover {
