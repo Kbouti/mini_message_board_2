@@ -3,7 +3,15 @@ const app = express();
 
 require("dotenv").config();
 
-app.get("/", (req, res) => res.send("Hello, world!"));
+
+const indexRouter = require("./routes/indexRouter");
+
+// app.get("/", (req, res) => res.send("Hello, world!"));
+
+
+app.use("/", indexRouter);
+
+
 
 const PORT = process.env.PORT || 3000;
 const MODE = process.env.MODE || "development";
