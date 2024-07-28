@@ -3,7 +3,7 @@ const {Router} = require("express");
 const newMessageRouter = Router();
 
 newMessageRouter.get("/", (req, res) => {
-    res.send("You've reached the new message section");
+    res.render("newMessage", {subtitle: "This is where you would create a new message"});
 })
 
 module.exports = newMessageRouter;
