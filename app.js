@@ -5,12 +5,13 @@ require("dotenv").config();
 
 
 const indexRouter = require("./routes/indexRouter");
+const newMessageRouter = require("./routes/newMessageRouter");
 
 // app.get("/", (req, res) => res.send("Hello, world!"));
 
 
 app.use("/", indexRouter);
-
+app.use("/new", newMessageRouter);
 
 
 const PORT = process.env.PORT || 3000;
