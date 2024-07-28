@@ -22,7 +22,7 @@ const newMessageRouter = require("./routes/newMessageRouter");
 
 app.use("/", indexRouter);
 app.use("/new", newMessageRouter);
-
+// We're gonna try to move this^^ to indexrouter
 
 const PORT = process.env.PORT || 3000;
 const MODE = process.env.MODE || "development";
