@@ -10,5 +10,12 @@
     <H1>Home page</H1>
     <%-include('components/navbar') %>
     <h2><%= subtitle %></h2>
+    <% messages.map((message) => {   %>
+        <div class="message">
+            <p><%=message.text%></p>
+            <p><%=message.user%></p>
+            <p><%=message.added%></p>
+        </div>
+<%    }) %>
 </body>
 </html>
