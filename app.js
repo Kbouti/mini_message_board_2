@@ -1,11 +1,16 @@
 const express = require("express");
 const app = express();
 
+// Configure view engine
 const path = require("path")
-
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+// Configure static assets
+const assetsPath = path.join(__dirname, "public");
+app.use(express.static(assetsPath));
+
+// Configure .env file
 require("dotenv").config();
 
 
