@@ -49,7 +49,7 @@ nav a:hover {
 .message {
     border: 2px solid rgb(87, 146, 255);
     border-radius: 10px;
-    margin-left: 1rem;
+    margin-left: auto;
     margin-right: auto;
     padding: 1rem;
     
