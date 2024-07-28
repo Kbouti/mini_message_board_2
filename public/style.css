@@ -35,3 +35,26 @@ nav a {
 nav a:hover {
   background-color: rgb(87, 146, 255);
 }
+
+.subtitle {
+    margin: 1rem;
+}
+.messages {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.message {
+    border: 2px solid rgb(87, 146, 255);
+    border-radius: 10px;
+    margin-left: 1rem;
+    margin-right: auto;
+    padding: 1rem;
+    
+}
+
+.from, .date {
+    color:rgb(164, 164, 164);
+}
