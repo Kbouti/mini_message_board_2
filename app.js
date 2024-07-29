@@ -13,6 +13,10 @@ app.use(express.static(assetsPath));
 // Configure .env file
 require("dotenv").config();
 
+// Configure yrlencoded middleware to allow access to form submission req.body
+app.use(express.urlencoded({ extended: true }));
+
+
 
 const indexRouter = require("./routes/indexRouter");
 const newMessageRouter = require("./routes/newMessageRouter");
