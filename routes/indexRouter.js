@@ -26,22 +26,13 @@ indexRouter.get("/new", (req, res) => {
 });
 
 indexRouter.post("/new", (req, res) => {
-  console.log(`req.body.text: ${req.body.text}`);
-
   const newEntry = {
     text: req.body.text,
     user: req.body.user,
     added: new Date(),
   };
-
   messages.push(newEntry);
-
-  console.log(`messages.length: ${messages.length}`);
-  // ************************************************************************************
-  // Now we need to return to the home screen or something?
-  // ************************************************************************************
-
-  res.send("You submitted the form! ");
+  res.render("home", { subtitle: "Messages:", messages: messages });
 });
 
 module.exports = indexRouter;
