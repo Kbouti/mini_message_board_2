@@ -3,6 +3,8 @@ const {Router} = require("express");
 const indexRouter = Router();
 
 
+const testVariable = "test-test"
+
 const messages = [
     {
         text: "Hi there!",
@@ -23,4 +25,9 @@ indexRouter.get("/", (req, res) => {
     });
 })
 
-module.exports = indexRouter;
+// **************************************************************************************************
+//  export {indexRouter, messages, testVariable};
+// Tried the above^^ and it broke the app. Below export syntax didn't work either. 
+// The goal was to export messages to the newMessageRouter file
+module.exports = indexRouter, messages, testVariable;
+// **************************************************************************************************
