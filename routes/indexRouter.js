@@ -1,5 +1,8 @@
 const { Router } = require("express");
 
+const pool = require("../database/pool");
+const queries = require("../database/queries");
+
 const indexRouter = Router();
 
 const messages = [
@@ -15,9 +18,20 @@ const messages = [
   },
 ];
 
-indexRouter.get("/", (req, res) => {
-  // res.send("You're in the index section");
-  res.render("home", { subtitle: "Messages:", messages: messages });
+indexRouter.get("/", async (req, res) => {
+
+const dbMessages = await queries.getAllMessages();
+// dbMessages.forEach((message) => {
+// Instead of logging each message, we'll pass them on to the view engine...
+//   console.log(`message${message.message}`);
+// })
+
+// Excellent. We're using messages from our database to render in our views. 
+
+// Next we need to update the name of our columns so they can be read in home.ejs.  
+
+
+  res.render("home", { subtitle: "Messages:", messages: dbMessages });
 });
 
 indexRouter.get("/new", (req, res) => {
