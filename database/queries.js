@@ -43,14 +43,15 @@ let rawTime = newEntry.time;
 
 
 
-    const sql = `insert into messages (text, author, date) values (${newEntry.text}, ${newEntry.author}, ${convertedDate});`
+    const sql = `insert into messages (text, author, date) values ('${newEntry.text}', '${newEntry.author}', ${convertedDate});`
 console.log(`sql: ${sql}`);
 
 // ******************************************************************************************************
 // OK! The current issue is that it just isn't liking our date format. That seems fixable. 
 
 // SQL isn't liking the date we're trying to give it. I think it just wants DD/MM/YYYY
-// Okkkk now it it's saying column "message text here" doesn't exist???
+
+// Fixed quote issue, need singlequotes around strings passed as values to sql
 // ******************************************************************************************************
 
 
