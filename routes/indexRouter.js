@@ -29,23 +29,29 @@ indexRouter.get("/new", (req, res) => {
   res.render("newMessage", { subtitle: "Create message:" });
 });
 
-indexRouter.post("/new", (req, res) => {
+indexRouter.post("/new", async (req, res) => {
 
 // **************************************************************************************************************
-// Here's where we need to work next. 
-// We need to perform a sql operation to add our new message to the database.
-
+// Next up we perform a sql operation (imported from database/queries) to create a new row in our table
+// See database/queries for current issue
 // **************************************************************************************************************
 
 
 
   const newEntry = {
     text: req.body.text,
-    user: req.body.user,
-    added: new Date(),
+    author: req.body.user,
+    date: new Date(),
+    time: new Date()
   };
-  messages.push(newEntry);
-  res.render("home", { subtitle: "Messages:", messages: messages });
+  
+  // messages.push(newEntry);
+const response = await queries.createRow(newEntry);
+const newMessages = await queries.getAllMessages();
+
+
+
+  res.render("home", { subtitle: "Messages:", messages: newMessages });
 });
 
 module.exports = indexRouter;
