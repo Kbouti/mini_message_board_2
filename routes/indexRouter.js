@@ -19,18 +19,8 @@ const messages = [
 ];
 
 indexRouter.get("/", async (req, res) => {
-
-const dbMessages = await queries.getAllMessages();
-// dbMessages.forEach((message) => {
-// Instead of logging each message, we'll pass them on to the view engine...
-//   console.log(`message${message.message}`);
-// })
-
-// Excellent. We're using messages from our database to render in our views. 
-
-// Next we need to update the name of our columns so they can be read in home.ejs.  
-
-
+  const dbMessages = await queries.getAllMessages();
+  // Excellent. We're using messages from our database to render in our views.
   res.render("home", { subtitle: "Messages:", messages: dbMessages });
 });
 
@@ -40,6 +30,15 @@ indexRouter.get("/new", (req, res) => {
 });
 
 indexRouter.post("/new", (req, res) => {
+
+// **************************************************************************************************************
+// Here's where we need to work next. 
+// We need to perform a sql operation to add our new message to the database.
+
+// **************************************************************************************************************
+
+
+
   const newEntry = {
     text: req.body.text,
     user: req.body.user,
