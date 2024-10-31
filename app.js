@@ -21,7 +21,7 @@ const indexRouter = require("./routes/indexRouter");
 app.use("/", indexRouter);
 
 const PORT = process.env.PORT || 3000;
-const MODE = process.env.MODE || "development";
+const MODE = process.env.MODE;
 app.listen(PORT, () =>
   console.log(
     `My first Express app - mode is ${MODE} listening on port ${PORT}!`

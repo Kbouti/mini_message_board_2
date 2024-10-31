@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "populate": "node database/populatedb",
+    "deploy:": "npm run populate && npm run start"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
